@@ -248,6 +248,40 @@ end
 
 GM:registerTrait(covertOps)
 
+local Juggernaut = {}
+juggernaut.id = "juggernaut"
+juggernaut.display = "Juggernaut"
+juggernaut.texture = "ground_control/traits/juggernaut"
+juggernaut.convar = "gc_trait"
+juggernaut.startLevel = 1
+juggernaut.maxLevel = 5
+juggernaut.basePrice = 2000
+juggernaut.pricePerLevel = 1500
+juggernaut.maximumhealthincrease = 10
+juggernaut.armorincrease = 10
+juggernaut.description = {
+	{t = "You've been in painfully strength training to be in the front lines blocking bullets for your team.", c = GM.HUDColors.white},
+	{t = "Allows to have more health and armor.", c = GM.HUDColors.white},
+	{t = "Each level increases health and armor by %s points .", c = GM.HUDColors.green, formatFunc = function(textToFormat) return string.format(textToFormat, medic.healthRestorePerLevel) end},
+	{
+		t = "Maximum health amount: +HEALTH%",
+		c = GM.HUDColors.green,
+		formatFunc = function(textToFormat) return string.easyformatbykeys(textToFormat, "CURRENT", math.Round(medic.healthRestorePerLevel * (LocalPlayer().traits[medic.id] or 0))) end
+	}
+}
+
+function juggernaut:onSpawn(player, currentLevel)
+	player.maximumhealthincrease = self.maximumhealthincrease * currentLevel
+	player.maximumarmorincrease = self.armorincrease * currentLevel
+end
+
+function juggernaut:remove(player, currentLevel)	
+	player.maximumhealthincrease = 0
+	player.maximumarmorincrease = 0
+end
+
+GM:registerTrait(juggernaut)
+
 local PLAYER = FindMetaTable("Player")
 
 function PLAYER:getTraitLevel(traitID)
