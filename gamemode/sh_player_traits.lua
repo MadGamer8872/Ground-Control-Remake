@@ -266,7 +266,7 @@ juggernaut.description = {
 	{
 		t = "Maximum health amount: +HEALTH%",
 		c = GM.HUDColors.green,
-		formatFunc = function(textToFormat) return string.easyformatbykeys(textToFormat, "CURRENT", math.Round(medic.healthRestorePerLevel * (LocalPlayer().traits[medic.id] or 0))) end
+		formatFunc = function(textToFormat) return string.easyformatbykeys(textToFormat, "CURRENT", math.Round(juggernaut.maximumhealthincrease * (LocalPlayer().traits[juggernaut.id] or 0))) end
 	}
 }
 
