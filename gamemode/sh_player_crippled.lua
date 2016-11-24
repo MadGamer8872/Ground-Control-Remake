@@ -61,50 +61,49 @@
  +		end
  +	end
  +	
- +	return self.bandages > 0 and target:Team() == self:Team()
+ +	return self.morphine > 0 and target:Team() == self:Team()
  +end
  +
- +function PLAYER:setCripple(bleeding)
- +	self.bleeding = bleeding
+ +function PLAYER:setCripple(cripple)
+ +	self.cripple = cripple
  +	
  +	if SERVER then
- +		self:sendBleedState()
+ +		self:sendCrippleState()
  +		
- +		if not bleeding and (self.regenPool and self.regenPool > 0) then
+ +		if not cripple and (self.regenPool and self.regenPool > 0) then
  +			self:sendStatusEffect("healing", true)
  +		end
  +	end
  +end
  +
- +function PLAYER:setBandages(bandages)
- +	bandages = bandages or GAMEMODE.DefaultBandages
+ +function PLAYER:setCripple(cripple)
+ +	Morphine = morphine or GAMEMODE.MedicMorphine
  +	
- +	self.bandages = bandages
+ +	self.morphine = morphine
  +	
  +	if SERVER then
- +		self:sendBandages()
+ +		self:sendMorphine()
  +	end
  +end
  +
- +function PLAYER:resetBleedData()
- +	self:setBleeding(false)
- +	self.bleedInflictor = nil
- +	self.bleedHealthDrainTime = 0
- +	self.healAmount = 0
+ +function PLAYER:resetCrippleData()
+ +	self:setCripple(false)
+ +	self.crippleInflictor = nil
+ + self.healamount = 0
  +end
  +
- +function PLAYER:getDesiredBandageCount()
- +	if GAMEMODE.curGametype.getDesiredBandageCount then
- +		local count = GAMEMODE.curGametype:getDesiredBandageCount(self)
+ +function PLAYER:getDesiredCount()
+ +	if GAMEMODE.curGametype.getDesiredMorphineCount then
+ +		local count = GAMEMODE.curGametype:getDesiredMorphineCount(self)
  +		
  +		if count then
  +			return count
  +		end
  +	end
  +	
- +	return math.Clamp(self:GetInfoNum("gc_bandages", GAMEMODE.DefaultBandages), GAMEMODE.MinBandages, GAMEMODE.MaxBandages)
+ +	return math.Clamp(self:GetInfoNum("gc_morphine", GAMEMODE.DefaultMorphine), GAMEMODE.MinMorphine, GAMEMODE.MaxMorphine)
  +end
  +
- +function GM:getBandageWeight(bandageCount)
- +	return bandageCount * self.BandageWeight
+ +function GM:getMorphineWeight(bandageCount)
+ +	return morphineCount * self.MorphineWeight
  +end
