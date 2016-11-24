@@ -339,8 +339,8 @@ function GM:PostPlayerDeath(ply)
 end
 
 GM.HitgroupDamageModifiers = {[HITGROUP_HEAD] = 3,
-	[HITGROUP_LEFTARM] = 0.65,
-	[HITGROUP_RIGHTARM] = 0.65,
+	[HITGROUP_LEFTARM] = 0.55,
+	[HITGROUP_RIGHTARM] = 0.45,
 	[HITGROUP_LEFTLEG] = 0.85,
 	[HITGROUP_RIGHTLEG] = 0.85}
 	
