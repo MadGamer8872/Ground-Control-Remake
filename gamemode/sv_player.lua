@@ -1,8 +1,8 @@
 GM.CashPerKill = 50
-GM.ExpPerKill = 20
+GM.ExpPerKill = 40
 
 GM.CashPerAssist = 50 -- depends on damage dealt, if you dealt 99.9% damage, you'll get 50$
-GM.ExpPerAssist = 40
+GM.ExpPerAssist = 20
 
 GM.CashPerSave = 25 -- every time we "save" someone (aka we kill a target that was about to kill one of our guys), we get this much money
 GM.ExpPerSave = 40
