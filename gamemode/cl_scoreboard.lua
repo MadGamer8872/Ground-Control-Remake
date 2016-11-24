@@ -100,8 +100,9 @@ function GM:HUDDrawScoreBoard()
 	draw.ShadowText("PING", CW_HUD16, X2 - 30, Y2 - 240, clrs.ColorWhite, clrs.ColorBlack, 1, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER) 
 	
 	
-	if myTeam == TEAM_RED then TEAM_BLUE if not v:Alive() then
+	local myTeam = lp:Team()
 	
+	function table.merge(TEAM_RED , TEAM_BLUE)
 	
 	for k, v in pairs(self:SortPlayers(TEAM_RED)) do
 		clrs.ColorWhite.r = 255
