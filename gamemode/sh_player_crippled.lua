@@ -56,7 +56,7 @@
  +	end
  +	
  +	if CLIENT then
- +		if not target:hasStatusEffect("bleeding") then
+ +		if not target:hasStatusEffect("crippled") then
  +			return false
  +		end
  +	end
