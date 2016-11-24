@@ -99,7 +99,9 @@ function GM:HUDDrawScoreBoard()
 	draw.ShadowText("SCORE", CW_HUD16, X2 - 90, Y2 - 240, clrs.ColorWhite, clrs.ColorBlack, 1, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER) 
 	draw.ShadowText("PING", CW_HUD16, X2 - 30, Y2 - 240, clrs.ColorWhite, clrs.ColorBlack, 1, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER) 
 	
-	local myTeam = lp:Team()
+	
+	if myTeam == TEAM_RED then TEAM_BLUE if not v:Alive() then
+	
 	
 	for k, v in pairs(self:SortPlayers(TEAM_RED)) do
 		clrs.ColorWhite.r = 255
