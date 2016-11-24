@@ -3,7 +3,7 @@ AddCSLuaFile("cl_gametypes.lua")
 
 CreateConVar("gc_gametype", 1, {FCVAR_ARCHIVE, FCVAR_NOTIFY})
 CreateConVar("gc_allow_gametype_votes", 1, {FCVAR_ARCHIVE, FCVAR_NOTIFY})
-GM.RemovePreviousGametype = false --[[ if this is set to true, then the gametype which was played previously will not be present during the vote for the next gametype
+GM.RemovePreviousGametype = true --[[ if this is set to true, then the gametype which was played previously will not be present during the vote for the next gametype
 in other words if you set it to true, people won't be able to play the same gametype 2 times in a row
 this is good if you've played way too much ghetto drug bust, because despite it being a fun joke it gets old really fast and you might get pissed if every
 time you log on the server all you see is ghetto drug bust being played over and over again
