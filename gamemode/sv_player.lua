@@ -5,10 +5,10 @@ GM.CashPerAssist = 50 -- depends on damage dealt, if you dealt 99.9% damage, you
 GM.ExpPerAssist = 20
 
 GM.CashPerSave = 25 -- every time we "save" someone (aka we kill a target that was about to kill one of our guys), we get this much money
-GM.ExpPerSave = 40
+GM.ExpPerSave = 20
 
 GM.CashPerMateHelp = 15 -- every time we "help a teammate" (aka we kill a target who was recently firing at our teammate), we get this much money
-GM.ExpPerMateHelp = 30
+GM.ExpPerMateHelp = 10
 
 GM.CashPerCloseCall = 15 -- every time we kill our assailant and have less or equal to MinHealthForCloseCall, we get this much money
 GM.ExpPerCloseCall = 10
@@ -29,8 +29,8 @@ GM.SaveEventTimeWindow = 5
 GM.CashPerOneManArmy = 15
 GM.ExpPerOneManArmy = 10
 
-GM.CashPerTeamKill = -100
-GM.ExpPerTeamKill = -200
+GM.CashPerTeamKill = -200
+GM.ExpPerTeamKill = -400
 
 GM.SendCurrencyAmount = {cash = nil, exp = nil}
 
