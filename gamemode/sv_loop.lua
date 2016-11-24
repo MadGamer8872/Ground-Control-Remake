@@ -1,5 +1,6 @@
 function GM:Think()
-	if self.curGametype.think ()
+	if self.curGametype.think then
+	self.curGametype.think ()
 
 	end
 	
