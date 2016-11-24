@@ -148,8 +148,8 @@ medic.convar = "gc_trait"
 medic.startLevel = 1
 medic.maxLevel = 5
 medic.basePrice = 1000
-medic.pricePerLevel = 500
-medic.healthRestorePerLevel = 1
+medic.pricePerLevel = 1000
+medic.healthRestorePerLevel = 1.5
 medic.description = {
 	{t = "You've undergone extensive medical training to treat wounds efficiently.", c = GM.HUDColors.white},
 	{t = "Allows to restore some health when bandaging self or team mates.", c = GM.HUDColors.white},
