@@ -262,7 +262,7 @@ juggernaut.armorincrease = 10
 juggernaut.description = {
 	{t = "You've been in painfully strength training to be in the front lines blocking bullets for your team.", c = GM.HUDColors.white},
 	{t = "Allows to have more health and armor.", c = GM.HUDColors.white},
-	{t = "Each level increases health and armor by %s points .", c = GM.HUDColors.green, formatFunc = function(textToFormat) return string.format(textToFormat, medic.healthRestorePerLevel) end},
+	{t = "Each level increases health and armor by %s points .", c = GM.HUDColors.green, formatFunc = function(textToFormat) return string.format(textToFormat, juggrnaut.maxiumhealthincrease) end},
 	{
 		t = "Maximum health amount: +HEALTH%",
 		c = GM.HUDColors.green,
